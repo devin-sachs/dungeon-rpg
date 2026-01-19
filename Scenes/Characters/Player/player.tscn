@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dgqxk1ujpey67"]
+[gd_scene load_steps=36 format=3 uid="uid://dgqxk1ujpey67"]
 
 [ext_resource type="Texture2D" uid="uid://0lxixy08f0to" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_000.png" id="1_27cb7"]
 [ext_resource type="Script" uid="uid://cyqkrasqany5f" path="res://Scripts/Characters/Player/Player.cs" id="1_46w32"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://b63xjrbtcd3g4" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_014.png" id="15_46w32"]
 [ext_resource type="Texture2D" uid="uid://djk2168id3p0b" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_016.png" id="16_eiaiy"]
 [ext_resource type="Texture2D" uid="uid://dwjva6naaee0i" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_017.png" id="17_cflke"]
+[ext_resource type="Texture2D" uid="uid://c3l7u5rqfa7s7" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_015.png" id="17_eiaiy"]
 [ext_resource type="Texture2D" uid="uid://b6yq3aul3avwu" path="res://Assets/Sprites/Characters/Player/Running/Running_000.png" id="18_nafmd"]
 [ext_resource type="Texture2D" uid="uid://bwar7yjo6cq5x" path="res://Assets/Sprites/Characters/Player/Running/Running_001.png" id="19_46w32"]
 [ext_resource type="Texture2D" uid="uid://dcb1dlmrn012d" path="res://Assets/Sprites/Characters/Player/Running/Running_002.png" id="20_eiaiy"]
@@ -45,7 +46,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.0534788, 0.109677, 0.166667, 0.22026, 0.279178, 0.332656, 0.391574, 0.447772, 0.502157, 0.554729, 0.613647, 0.669845, 0.722417, 0.780428, 0.833001, 0.891012, 0.946303),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("1_27cb7"), ExtResource("2_xcbxy"), ExtResource("3_7x37g"), ExtResource("4_pr2lv"), ExtResource("5_cvakg"), ExtResource("6_othne"), ExtResource("7_a7o8c"), ExtResource("8_23420"), ExtResource("9_p6wb4"), ExtResource("10_y3fvr"), ExtResource("11_roksr"), ExtResource("12_qn1vu"), ExtResource("13_61squ"), ExtResource("14_nafmd"), ExtResource("15_46w32"), ExtResource("1_27cb7"), ExtResource("16_eiaiy"), ExtResource("17_cflke")]
+"values": [ExtResource("1_27cb7"), ExtResource("2_xcbxy"), ExtResource("3_7x37g"), ExtResource("4_pr2lv"), ExtResource("5_cvakg"), ExtResource("6_othne"), ExtResource("7_a7o8c"), ExtResource("8_23420"), ExtResource("9_p6wb4"), ExtResource("10_y3fvr"), ExtResource("11_roksr"), ExtResource("12_qn1vu"), ExtResource("13_61squ"), ExtResource("14_nafmd"), ExtResource("15_46w32"), ExtResource("17_eiaiy"), ExtResource("16_eiaiy"), ExtResource("17_cflke")]
 }
 
 [sub_resource type="Animation" id="Animation_uvgfe"]
@@ -87,10 +88,13 @@ _data = {
 &"RESET": SubResource("Animation_27cb7")
 }
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("animPlayerNode", "sprite3DNode")]
 script = ExtResource("1_46w32")
+animPlayerNode = NodePath("AnimationPlayer")
+sprite3DNode = NodePath("Sprite3D")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+texture_filter = 0
 texture = ExtResource("1_27cb7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
